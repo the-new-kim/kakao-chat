@@ -1,0 +1,23 @@
+doctype html
+html(lang="en")
+    head
+        meta(charset="UTF-8")
+        meta(http-equiv="X-UA-Compatible", content="IE=edge")
+        meta(name="viewport", content="width=device-width, initial-scale=1.0")  
+        if pageTitle 
+            title #{pageTitle} | #{siteTitle} 
+        else 
+            title=siteTitle
+        //- link(rel="stylesheet", href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css")
+        //- link(rel="stylesheet", href="/static/css/styles.css")
+
+    body 
+        include partials/header     
+        main
+            if errorMessage 
+                span.error-message=errorMessage
+            block body
+        include partials/footer
+        block scripts
+        script(src="/static/js/main.js")
+        //- script(src="/static/main.js")
